@@ -1,0 +1,942 @@
+{
+	"info": {
+		"_postman_id": "e7432004-066c-4eb9-b7cb-11021563cdf9",
+		"name": "Studdit -- Studeerhet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Posting a user should create one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Gebruikersnaam\",\n\t\"password\": \"Wachtwoord\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/users/",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating a user ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Gebruikersnaam\",\n\t\"password\": \"nieuwWachtwoord\",\n\t\"currentPassword\": \"Wachtwoord\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/users/Gebruikersnaam",
+							"protocol": "httpss",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"users",
+								"Gebruikersnaam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Removing a user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\": \"nieuwWachtwoord\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/users/Gebruikersnaam",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"users",
+								"Gebruikersnaam"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Threads",
+			"item": [
+				{
+					"name": "Posting a thread creates one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"title\": \"Test Thread\",\n\t\"content\": \"Test Thread Title\",\n\t\"username\": \"Gebruikersnaam\"\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Threads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get thread by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a thread",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"New Test Thread content\",\n\t\"username\": \"Gebruikersnaam\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6c26e6d6cb865442294bf",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6c26e6d6cb865442294bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get thread depth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/user/Gebruikersnaam/2",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"user",
+								"Gebruikersnaam",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upvote thread",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/upvote",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"upvote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downvote thread",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/downvote",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"downvote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze a thread",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ca0beea55b6068f2f6e8/analyze",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ca0beea55b6068f2f6e8",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get suggestions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ca0beea55b6068f2f6e8/suggestions",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ca0beea55b6068f2f6e8",
+								"suggestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all threads sorting on upvotes descending",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads?sort=upvoteDESC",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "upvoteDESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all threads sorting on comment count descending",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads?sort=commentcountDESC",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "commentcountDESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all threads sorting on vote difference descending",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads?sort=votediffDESC",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "votediffDESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a specific thread and all its subdocuments and references",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "studeerhet.herokuapp.com/api/threads/5dd6ca0beea55b6068f2f6e8",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ca0beea55b6068f2f6e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get related threads based on NER topics - graph",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd681c9d113430017c260b5/related",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd681c9d113430017c260b5",
+								"related"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Posting a comment to a thread",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\",\n\t\"content\": \"Dit is een test comment\",\n\t\"username\": \"Gebruikersnaam\"\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posting comment to comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Gebruikersnaam\",\n\t\"content\": \"Nog een comment\",\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments/5dd6ccd2b4d4223a4044a610",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments",
+								"5dd6ccd2b4d4223a4044a610"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Removing a comment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments/5dd6cceeb4d4223a4044a612/",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments",
+								"5dd6cceeb4d4223a4044a612",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/comments/5dd6ccd2b4d4223a4044a610/analyze",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"comments",
+								"5dd6ccd2b4d4223a4044a610",
+								"analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get suggested comments based on NER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments/5dd6ccd2b4d4223a4044a610/suggestcontent",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments",
+								"5dd6ccd2b4d4223a4044a610",
+								"suggestcontent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upvote comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\"\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments/5dd6ccd2b4d4223a4044a610/upvote",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments",
+								"5dd6ccd2b4d4223a4044a610",
+								"upvote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downvote comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"userid\": \"5dd6ccbfb4d4223a4044a60e\"\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/5dd6ccc5b4d4223a4044a60f/comments/5dd6ccd2b4d4223a4044a610/downvote",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"5dd6ccc5b4d4223a4044a60f",
+								"comments",
+								"5dd6ccd2b4d4223a4044a610",
+								"downvote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get related comments based on NER topics - graph",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/threads/comments/5dd6cac0c5c6dd0017d4d227/related",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"threads",
+								"comments",
+								"5dd6cac0c5c6dd0017d4d227",
+								"related"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Friendships",
+			"item": [
+				{
+					"name": "Creating a friendship",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"userOne\": \"Gebruikersnaam\",\n\t\"userTwo\": \"Gebruikersnaam2\"\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/friendship",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"friendship"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleting a friendship",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"userOne\": \"Gebruikersnaam\",\n\t\"userTwo\": \"Gebruikersnaam2\"\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/friendship",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"friendship"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get detph",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://studeerhet.herokuapp.com/api/friendship/Gebruikersnaam/1",
+							"protocol": "https",
+							"host": [
+								"studeerhet.herokuapp.com"
+							],
+							"port": "",
+							"path": [
+								"api",
+								"friendship",
+								"Gebruikersnaam",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,44 @@
+image: node:latest
+
+stages:
+  - test
+  - production
+
+# 
+# Global variables
+# 
+variables:
+   DOCKER_HOST: tcp://docker:2375/
+   DOCKER_DRIVER: overlay2
+
+# 
+# Testing nodejes backend
+# 
+test server:
+  image: node:carbon
+  stage: test
+  services:
+    - docker:dind
+  variables:
+    NODE_ENV: test
+  before_script:
+    - npm install
+  script:
+    - npm run test
+
+# 
+# Deploy to Heroku
+# 
+production:
+  type: deploy
+  stage: production
+  image: ruby:latest
+  
+  script:
+    - echo "Heroku api key = $HEROKU_API_KEY"
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+  only:
+    - master

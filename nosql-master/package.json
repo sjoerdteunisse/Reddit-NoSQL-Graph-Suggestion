@@ -1,0 +1,37 @@
+{
+  "name": "node_exam",
+  "version": "1.0.0",
+  "description": "node exam",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "set NODE_ENV=test&& mocha --recursive --timeout 6000 --exit ",
+    "start": "set NODE_ENV=production&& node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjoerdteunisse/Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjoerdteunisse/Node/issues"
+  },
+  "homepage": "https://github.com/sjoerdteunisse/Node#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "compromise": "^11.14.3",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "neo4j-driver": "^1.7.6",
+    "nodemon": "^1.19.4",
+    "sentiment": "^5.0.2"
+  },
+  "devDependencies": {}
+}
