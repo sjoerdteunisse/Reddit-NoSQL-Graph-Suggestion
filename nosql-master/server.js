@@ -19,15 +19,15 @@ const expressPort = process.env.PORT || 3000;
 let mongoConnectionUrl;
 if(process.env.NODE_ENV === 'test'){
     console.log('test')
-    mongoConnectionUrl = "mongodb+srv://studdit:0TVVRmcG9PivtBrf@cluster0-grbyc.gcp.mongodb.net/test?retryWrites=true&w=majority";
+    mongoConnectionUrl = "####";
 }
 else if (process.env.NODE_ENV === 'production'){
-    mongoConnectionUrl = "mongodb+srv://studdit:0TVVRmcG9PivtBrf@studdit-production-ppgfs.mongodb.net/test?retryWrites=true&w=majority";
+    mongoConnectionUrl = "####";
     console.log('prod')
 }
 else if (process.env.NODE_ENV === 'local'){
     console.log('local')
-    mongoConnectionUrl = 'mongodb://127.0.0.1/studdit_nosql_test';
+    mongoConnectionUrl = '####';
 }
 
 //Set routing on app
